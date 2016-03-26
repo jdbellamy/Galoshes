@@ -1,0 +1,8 @@
+spring:
+  jade4j:
+    caching: false
+    prettyPrint: true
+
+api:
+  hello:
+    url: http://localhost:8080/hello

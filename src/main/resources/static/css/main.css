@@ -1,0 +1,18 @@
+body {
+  font-family: "Helvetica Neue", serif;
+  background-color: #232323;
+}
+body p {
+  color: white;
+}
+body h1 {
+  color: #ffff00;
+}
+body .bright {
+  color: aquamarine;
+}
+body .time-text {
+  font-family: 'Courier New', monospace;
+  font-size: large;
+  color: crimson;
+}

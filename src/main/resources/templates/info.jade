@@ -1,0 +1,12 @@
+extends ./layouts/layout
+
+block content
+    - var rows = ["one", "two", "three"]
+    each item, index in rows
+        .row
+            .col-xs-2
+                label.lead.bright #{utils.upcase2(item + ':')}
+            .col-xs-3.pull-left
+                p.lead #{r[index]}
+            .col-xs-6
+                .filler &nbsp;
