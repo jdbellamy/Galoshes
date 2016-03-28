@@ -30,7 +30,7 @@ class DemoIntegrationSpec extends Specification {
 
     void "greeting api returns valid result"() {
         when:
-        def response = this.mvc.perform(get("/hello")
+        def response = this.mvc.perform(get("/api/hello")
                 .accept(MediaType.parseMediaType('application/json;charset=UTF-8')))
 
         then:

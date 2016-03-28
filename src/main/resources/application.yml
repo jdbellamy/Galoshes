@@ -5,4 +5,4 @@ spring:
 
 api:
   hello:
-    url: http://localhost:8080/hello
+    url: http://localhost:8080/api/hello

@@ -18,7 +18,6 @@ class ViewHelperSpec extends Specification {
     @Shared
     def fixture = [
             'AAAAA': 'AAAAA',
-            'AAAAA': 'AAAAA',
             'aaAAA': 'AaAAA',
             'aaaAA': 'AaaAA',
             'aaaaA': 'AaaaA',
