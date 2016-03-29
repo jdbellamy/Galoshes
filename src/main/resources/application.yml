@@ -6,3 +6,5 @@ spring:
 api:
   hello:
     url: http://localhost:8080/api/hello
+    name: Me
+    phrase: Hi

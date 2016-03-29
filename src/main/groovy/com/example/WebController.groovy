@@ -11,13 +11,12 @@ import java.time.LocalDateTime
 
 @Controller
 @RequestMapping(path = "/web")
-class DemoWebController {
+class WebController {
 
-    @Autowired
-    GreetingService greetingService
+    @Autowired GreetingService greetingService
+    @Autowired OtherService otherService
 
-    @Value('${api.hello.url}')
-    String helloUrl
+    @Value('${api.hello.url}') String helloUrl
 
     @RequestMapping('/hello')
     def index() {
@@ -30,15 +29,13 @@ class DemoWebController {
     @RequestMapping('/templates/{template}')
     def info(@PathVariable String template) {
         new ModelAndView(template, [
-            'time': LocalDateTime.now(),
-            'greeting': new Greeting(who: "You"),
-            'r': new Random().doubles().limit(3).toArray()
+            'r': otherService.getDoubles(3).toArray()
         ])
     }
 
     @RequestMapping('/api')
     def call() {
-        def api = greetingService.helloApi(helloUrl)
+        def api = greetingService.callHello()
         new ModelAndView('hello', [
             'time': LocalDateTime.now(),
             'greeting': new Greeting(phrase: api.phrase, who: api.who)
