@@ -1,4 +1,4 @@
-package com.example;
+package com.example.logging;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -14,7 +14,8 @@ public @interface Detailed {
 
     enum DetailType {
         API_CONSUMER,
-        PROPERTY_BACKED,
-        DB_CLIENT;
+        DB_CLIENT,
+        INTERNAL_REFERENCE
     }
+
 }

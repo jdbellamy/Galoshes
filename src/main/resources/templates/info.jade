@@ -1,12 +1,20 @@
 extends ./layouts/layout
 
 block content
-    - var rows = ["one", "two", "three"]
-    each item, index in rows
-        .row
-            .col-xs-2
-                label.lead.bright #{utils.upcase2(item + ':')}
-            .col-xs-3.pull-left
-                p.lead #{r[index]}
-            .col-xs-6
-                .filler &nbsp;
+    each signal in signals
+        .well-sm
+            div
+                span.signal-label.buffer-right Correlation ID:&nbsp;
+                span.lead.correlation-id #{signal.correlationId}
+            .pull-right.signal-id #{signal.id}
+            div
+                span.signal-label.buffer-right Transaction ID:&nbsp;
+                span.transaction-id #{signal.transactionId}
+            .spacer
+            div.well-sm.bg-details
+                - var entries = signal.details.entrySet()
+                each entry in entries
+                    dd
+                        span.dim #{utils.delimeterAsDots(entry.key)}
+                        span &nbsp;
+                        span #{entry.value}

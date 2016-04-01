@@ -1,4 +1,4 @@
-package com.example
+package com.example.view
 
 import com.domingosuarez.boot.autoconfigure.jade4j.JadeHelper
 
@@ -32,6 +32,11 @@ public class ViewHelper {
         def tail = label.substring(1)
         String.join('', head, tail)
     }
+
+    def delimeterAsDots(String key) {
+        key.replaceAll("_", ".")
+    }
+
 }
 
 

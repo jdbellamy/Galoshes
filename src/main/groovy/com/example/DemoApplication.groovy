@@ -1,20 +1,26 @@
 package com.example
 
+import com.example.dao.GreetingRepository
+import com.example.logging.Detailed
+import com.example.services.GreetingService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.context.annotation.ComponentScan
+import springfox.documentation.swagger2.annotations.EnableSwagger2
 
+@EnableSwagger2
 @SpringBootApplication
+@ComponentScan(basePackages=['com.example'])
 class DemoApplication implements CommandLineRunner {
 
 	@Autowired GreetingService greetingService
-	@Autowired OtherService otherService
+
+	@Autowired private GreetingRepository repository
 
 	@Override
 	public void run(String... args) {
-		//this.greetingService.callHello()
-		//this.otherService.getDoubles(1)
 	}
 
 	static void main(String[] args) {

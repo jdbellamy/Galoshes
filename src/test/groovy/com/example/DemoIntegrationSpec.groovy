@@ -8,12 +8,14 @@ import org.springframework.test.context.web.WebAppConfiguration
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.web.context.WebApplicationContext
+import spock.lang.Ignore
 import spock.lang.Specification
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
+@Ignore
 @SpringApplicationConfiguration(classes = DemoApplication)
 @WebAppConfiguration
 class DemoIntegrationSpec extends Specification {
@@ -25,7 +27,7 @@ class DemoIntegrationSpec extends Specification {
 
     def setup() {
         MockitoAnnotations.initMocks(this)
-        this.mvc = MockMvcBuilders.webAppContextSetup(this.context).build();
+        this.mvc = MockMvcBuilders.webAppContextSetup(this.context).build()
     }
 
     void "greeting api returns valid result"() {

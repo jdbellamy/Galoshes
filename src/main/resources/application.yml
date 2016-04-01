@@ -2,6 +2,9 @@ spring:
   jade4j:
     caching: false
     prettyPrint: true
+  data:
+    mongodb:
+      host: 192.168.99.100
 
 api:
   hello:

@@ -1,0 +1,10 @@
+extends ./layouts/layout
+
+block content
+    h1 Hellos
+    .time-text #{time}
+    br
+    each greeting in greetings
+        dd
+            span.numbered #{greeting.id}:&nbsp;
+            span.greeting #{greeting.phrase}, #{greeting.who}

@@ -9,10 +9,46 @@ body h1 {
   color: #ffff00;
 }
 body .bright {
-  color: aquamarine;
+  color: #adadad;
+}
+body .dim {
+  color: rgba(59, 132, 255, 0.59);
 }
 body .time-text {
   font-family: 'Courier New', monospace;
   font-size: large;
   color: crimson;
+}
+body .numbered {
+  font-family: 'PT Mono', monospace;
+  color: white;
+}
+body .signal-id {
+  font-family: 'Consolas', monospace;
+  color: rgba(255, 255, 255, 0.2);
+}
+body .signal-label {
+  font-family: 'Consolas', monospace;
+  color: rgba(255, 255, 255, 0.2);
+}
+body .correlation-id {
+  font-family: 'Courier New', monospace;
+  color: white;
+}
+body .spacer {
+  padding-bottom: .4em;
+}
+body .transaction-id {
+  font-family: 'Courier New', monospace;
+  color: forestgreen;
+}
+body .greeting {
+  margin-bottom: 0;
+  color: #269abc;
+}
+body .buffer-right {
+  padding-right: 0.5em;
+}
+body .bg-details {
+  background-color: white;
 }
