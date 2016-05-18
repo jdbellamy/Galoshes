@@ -30,7 +30,7 @@ class GreetingController {
         ])
     }
 
-    @RequestMapping('/')
+    @RequestMapping(path = '/', method = GET)
     def index() {
         new ModelAndView('hellos',[
             'time': LocalDateTime.now(),
@@ -38,12 +38,12 @@ class GreetingController {
         ])
     }
 
-    @RequestMapping('/call')
+    @RequestMapping(path = '/call', method = GET)
     @Detailed(name='call', type=INTERNAL_REFERENCE)
     def call() {
         new ModelAndView('hellos', [
             'time': LocalDateTime.now(),
-            'greeting': greetingService.callHello()
+            'greetings': greetingService.callHello()
         ])
     }
 }

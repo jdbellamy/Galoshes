@@ -1,0 +1,21 @@
+db:
+  image: mongo
+  container_name: some-mongo
+  ports:
+    - "27017:27017"
+#  elk:
+#    image: sebp/elk
+#    ports:
+#      - "5601:5601"
+#      - "9200:9200"
+#      - "5044:5044"
+#      - "5000:5000"
+api:
+  container_name: some-api
+  build: .
+  ports:
+    - "8080:8080"
+  volumes:
+    - .:/code
+  links:
+    - db

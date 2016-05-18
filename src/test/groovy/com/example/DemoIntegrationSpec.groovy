@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 @Ignore
-@SpringApplicationConfiguration(classes = DemoApplication)
+@SpringApplicationConfiguration(classes = Application)
 @WebAppConfiguration
 class DemoIntegrationSpec extends Specification {
 

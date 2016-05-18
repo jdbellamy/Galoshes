@@ -1,9 +1,16 @@
 package com.example.view
 
 import com.domingosuarez.boot.autoconfigure.jade4j.JadeHelper
+import com.example.utils.SomeDefaults
+
+import java.time.LocalDateTime
 
 @JadeHelper("utils")
 public class ViewHelper {
+
+    def formatTimestamp(LocalDateTime dateTime) {
+        SomeDefaults.timestampFormatter.format(dateTime)
+    }
 
     def upcase(String name) {
         List.metaClass.collectWithIndex = { yield ->

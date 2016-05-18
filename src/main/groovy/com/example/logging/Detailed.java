@@ -10,9 +10,11 @@ import java.lang.annotation.Target;
 public @interface Detailed {
 
     String name() default "";
+
     DetailType type();
 
     enum DetailType {
+        API_PROVIDER,
         API_CONSUMER,
         DB_CLIENT,
         INTERNAL_REFERENCE

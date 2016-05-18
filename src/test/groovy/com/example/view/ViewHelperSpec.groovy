@@ -1,7 +1,6 @@
 package com.example.view
 
-import com.example.DemoApplication
-import com.example.view.ViewHelper
+import com.example.Application
 import org.mockito.MockitoAnnotations
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.SpringApplicationConfiguration
@@ -11,7 +10,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 @Ignore
-@SpringApplicationConfiguration(classes = DemoApplication)
+@SpringApplicationConfiguration(classes = Application)
 class ViewHelperSpec extends Specification {
 
     @Autowired

@@ -4,7 +4,7 @@ block content
     each signal in signals
         .well-sm
             div
-                span.signal-label.buffer-right Correlation ID:&nbsp;
+                //span.signal-label.buffer-right Correlation ID:&nbsp;
                 span.lead.correlation-id #{signal.correlationId}
             .pull-right.signal-id #{signal.id}
             div
@@ -12,6 +12,7 @@ block content
                 span.transaction-id #{signal.transactionId}
             .spacer
             div.well-sm.bg-details
+                div.text-danger.spacer #{utils.formatTimestamp(signal.timestamp)}
                 - var entries = signal.details.entrySet()
                 each entry in entries
                     dd

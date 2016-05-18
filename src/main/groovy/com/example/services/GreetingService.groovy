@@ -1,16 +1,16 @@
 package com.example.services
 
+import com.example.dao.GreetingRepository
 import com.example.logging.CorrelationContext
 import com.example.logging.Detailed
 import com.example.models.Greeting
-import com.example.dao.GreetingRepository
 import groovy.json.JsonSlurper
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 
-import static com.example.logging.Detailed.DetailType.DB_CLIENT
 import static com.example.logging.Detailed.DetailType.API_CONSUMER
+import static com.example.logging.Detailed.DetailType.DB_CLIENT
 
 @Service
 class GreetingService {
@@ -53,7 +53,8 @@ class GreetingService {
 
     @Detailed(name="callHello", type=API_CONSUMER)
     public List<Greeting> callHello() {
-        def site = url.toURL().getText(requestProperties: ['Correlation-Id': CorrelationContext.id])
-        new JsonSlurper().parseText(site) as List<Greeting>
+        def headers = ['Correlation-Id': CorrelationContext.id]
+        def json = url.toURL().getText(requestProperties: headers)
+        new JsonSlurper().parseText(json) as List<Greeting>
     }
 }

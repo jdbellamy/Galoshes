@@ -16,7 +16,7 @@ class SignalController {
 
     @Autowired SignalService service
 
-    @Value('${api.hello.url}') String helloUrl
+    @Value('${signal.url}') String signalUrl
 
     @RequestMapping(path = '/{id}')
     def putHello(@PathVariable String id) {

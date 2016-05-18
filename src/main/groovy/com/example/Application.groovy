@@ -1,7 +1,6 @@
 package com.example
 
 import com.example.dao.GreetingRepository
-import com.example.logging.Detailed
 import com.example.services.GreetingService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
@@ -13,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 @EnableSwagger2
 @SpringBootApplication
 @ComponentScan(basePackages=['com.example'])
-class DemoApplication implements CommandLineRunner {
+class Application implements CommandLineRunner {
 
 	@Autowired GreetingService greetingService
 
@@ -24,6 +23,6 @@ class DemoApplication implements CommandLineRunner {
 	}
 
 	static void main(String[] args) {
-		SpringApplication.run DemoApplication, args
+		SpringApplication.run Application, args
 	}
 }
